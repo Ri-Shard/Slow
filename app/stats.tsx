@@ -1,9 +1,9 @@
 import { Colors } from '@/constants/Colors';
-import { getRecentUnlocks, UnlockRecord } from '@/services/database/schema';
+import { getRecentUnlocks, getSkippedUnlocksCountToday, UnlockRecord } from '@/services/database/schema';
 import { UsageStatsService } from '@/services/usageStats';
-import { useRouter } from 'expo-router';
-import { ArrowLeft, Database, Key } from 'lucide-react-native';
-import React, { useEffect, useState } from 'react';
+import { useFocusEffect, useRouter } from 'expo-router';
+import { ArrowLeft, Clock, Database, Key } from 'lucide-react-native';
+import React, { useCallback, useState } from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -12,16 +12,21 @@ export default function StatsScreen() {
     const insets = useSafeAreaInsets();
     const [unlocks, setUnlocks] = useState<UnlockRecord[]>([]);
     const [hasPermission, setHasPermission] = useState<boolean>(false);
-
-    useEffect(() => {
-        loadData();
-        checkPermissions();
-    }, []);
+    const [savedMinutes, setSavedMinutes] = useState(0);
 
     const loadData = async () => {
         const data = await getRecentUnlocks();
         setUnlocks(data);
+        const count = await getSkippedUnlocksCountToday();
+        setSavedMinutes(count * 15);
     };
+
+    useFocusEffect(
+        useCallback(() => {
+            loadData();
+            checkPermissions();
+        }, [])
+    );
 
     const checkPermissions = async () => {
         const perm = await UsageStatsService.checkPermission();
@@ -58,6 +63,16 @@ export default function StatsScreen() {
                     </TouchableOpacity>
                 </View>
             )}
+
+            <View style={styles.summaryCard}>
+                <View style={styles.summaryIconContainer}>
+                    <Clock color={Colors.accentPrimary} size={28} />
+                </View>
+                <View style={styles.summaryTextContainer}>
+                    <Text style={styles.summaryTitle}>Tiempo Ahorrado Hoy</Text>
+                    <Text style={styles.summaryValue}>{savedMinutes} Minutos</Text>
+                </View>
+            </View>
 
             <Text style={styles.sectionTitle}>Últimos Desbloqueos ({unlocks.length})</Text>
 
@@ -214,5 +229,43 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: Colors.textSoft,
         marginTop: 8,
+    },
+    summaryCard: {
+        backgroundColor: Colors.secondary,
+        borderRadius: 16,
+        padding: 20,
+        marginBottom: 24,
+        flexDirection: 'row',
+        alignItems: 'center',
+        elevation: 2,
+        shadowColor: Colors.text,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.05,
+        shadowRadius: 8,
+    },
+    summaryIconContainer: {
+        width: 56,
+        height: 56,
+        borderRadius: 28,
+        backgroundColor: Colors.background,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginRight: 16,
+    },
+    summaryTextContainer: {
+        flex: 1,
+    },
+    summaryTitle: {
+        fontFamily: 'Inter_600SemiBold',
+        fontSize: 14,
+        color: Colors.textSoft,
+        textTransform: 'uppercase',
+        letterSpacing: 1,
+        marginBottom: 4,
+    },
+    summaryValue: {
+        fontFamily: 'CormorantGaramond_600SemiBold',
+        fontSize: 28,
+        color: Colors.accentPrimary,
     }
 });

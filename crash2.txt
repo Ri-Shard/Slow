@@ -1,0 +1,683 @@
+--------- beginning of crash
+02-14 02:53:24.646  1319  1319 I libimsma_adapt: mtk-brm-commit-id:8783a29bae0ae84a456239f3212f27bdafa94c91
+02-14 02:53:24.646  1319  1319 I libimsma_adapt: mtk-brm-change-id:Iee598bb542f5de895a4b71649fbc79b2d93bc3de
+02-14 02:53:24.646  1319  1319 I libimsma_adapt: mtk-brm-merge-id:none
+02-14 02:53:24.744  1420  1420 I emdlogger: mtk-brm-commit-id:d0df48aa8f322c846a0ee2934fb5db5ae2bfa375
+02-14 02:53:24.744  1420  1420 I emdlogger: mtk-brm-change-id:If94188b9963eb72d8d14a663ce767eefa5d45906
+02-14 02:53:24.744  1420  1420 I emdlogger: mtk-brm-merge-id:none
+02-14 20:37:26.936   721   721 F libc    : crash_dump helper failed to exec, or was killed
+02-14 20:37:29.986   636   636 F libc    : crash_dump helper failed to exec, or was killed
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: FATAL EXCEPTION: main
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: Process: co.com.sura.seguros, PID: 13943
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: java.lang.RuntimeException: Unable to start receiver com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver: java.lang.NullPointerException: Attempt to invoke virtual method 'int java.lang.Integer.intValue()' on a null object reference
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at android.app.ActivityThread.handleReceiver(ActivityThread.java:5054)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleReceiver(Unknown Source:0)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2586)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'int java.lang.Integer.intValue()' on a null object reference
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at com.dexterous.flutterlocalnotifications.FlutterLocalNotificationsPlugin.setSmallIcon(Unknown Source:48)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at com.dexterous.flutterlocalnotifications.FlutterLocalNotificationsPlugin.createNotification(Unknown Source:542)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at com.dexterous.flutterlocalnotifications.FlutterLocalNotificationsPlugin.showNotification(Unknown Source:0)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver.onReceive(Unknown Source:126)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	at android.app.ActivityThread.handleReceiver(ActivityThread.java:5045)
+02-18 08:56:27.274 13943 13943 E AndroidRuntime: 	... 9 more
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: FATAL EXCEPTION: main
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: Process: co.com.sura.seguros, PID: 14809
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: java.lang.RuntimeException: Unable to start receiver com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver: java.lang.NullPointerException: Attempt to invoke virtual method 'int java.lang.Integer.intValue()' on a null object reference
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at android.app.ActivityThread.handleReceiver(ActivityThread.java:5054)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleReceiver(Unknown Source:0)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2586)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'int java.lang.Integer.intValue()' on a null object reference
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at com.dexterous.flutterlocalnotifications.FlutterLocalNotificationsPlugin.setSmallIcon(Unknown Source:48)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at com.dexterous.flutterlocalnotifications.FlutterLocalNotificationsPlugin.createNotification(Unknown Source:542)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at com.dexterous.flutterlocalnotifications.FlutterLocalNotificationsPlugin.showNotification(Unknown Source:0)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver.onReceive(Unknown Source:126)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	at android.app.ActivityThread.handleReceiver(ActivityThread.java:5045)
+02-18 08:56:28.466 14809 14809 E AndroidRuntime: 	... 9 more
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: FATAL EXCEPTION: main
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: Process: com.nequi.MobileApp, PID: 29174
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: java.lang.IllegalStateException: Can not perform this action after onSaveInstanceState
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at android.app.FragmentManagerImpl.checkStateLoss(FragmentManager.java:1882)
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at android.app.FragmentManagerImpl.enqueueAction(FragmentManager.java:1905)
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at android.app.BackStackRecord.commitInternal(BackStackRecord.java:688)
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at android.app.BackStackRecord.commit(BackStackRecord.java:646)
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at android.app.DialogFragment.show(DialogFragment.java:241)
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at com.nequi.plugins.security.FingerPrintPlugin$a.run(SourceFile:54)
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:959)
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+02-23 08:06:21.469 29174 29174 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+02-23 17:05:07.815   721   721 F libc    : crash_dump helper failed to exec, or was killed
+02-23 17:05:20.631   636   636 F libc    : crash_dump helper failed to exec, or was killed
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: FATAL EXCEPTION: main
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: Process: com.grupor5.r5app:com.emrys.rjsniffer.rjsniffer.Sniffer, PID: 6943
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: java.lang.RuntimeException: Unable to create application com.grupor5.r5app.MyApp: java.lang.IllegalStateException: SharedPreferences cannot be accessed if UserManager is not available. (e.g. from inside an isolated process)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7871)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2566)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at com.android.internal.os.ChildZygoteInit.runZygoteServer(ChildZygoteInit.java:136)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at com.android.internal.os.AppZygoteInit.main(AppZygoteInit.java:119)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: Caused by: java.lang.IllegalStateException: SharedPreferences cannot be accessed if UserManager is not available. (e.g. from inside an isolated process)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at android.app.ContextImpl.getSharedPreferences(ContextImpl.java:647)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at android.app.ContextImpl.getSharedPreferences(ContextImpl.java:610)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at android.content.ContextWrapper.getSharedPreferences(ContextWrapper.java:223)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at org.chromium.support_lib_boundary.util.a.p(SourceFile:35)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at com.facebook.s.m(SourceFile:38)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at com.facebook.s.l(SourceFile:9)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at com.grupor5.r5app.MyApp.onCreate(SourceFile:88)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1390)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7865)
+02-24 11:23:35.282  6943  6943 E AndroidRuntime: 	... 13 more
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: FATAL EXCEPTION: main
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: Process: com.adidas.app:com.akamai.webview.process, PID: 12027
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: java.lang.RuntimeException: Unable to create application com.adidas.app.HeroApplication: java.lang.IllegalStateException: Default FirebaseApp is not initialized in this process com.adidas.app:com.akamai.webview.process. Make sure to call FirebaseApp.initializeApp(Context) first.
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7871)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2566)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: Caused by: java.lang.IllegalStateException: Default FirebaseApp is not initialized in this process com.adidas.app:com.akamai.webview.process. Make sure to call FirebaseApp.initializeApp(Context) first.
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at com.google.firebase.FirebaseApp.getInstance(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:6)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at com.google.firebase.remoteconfig.FirebaseRemoteConfig.getInstance(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:1)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at sj.z1$a.d(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:1)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at sj.b2.a(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:3)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wi.b$l$a.c(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:80)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wi.b$l$a.get(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:26)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wc2.b.a(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:10)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wc2.b.get(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:7)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wi.b$l.O2(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:33)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wi.b$l.getGatewayServiceBuilder(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:29)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wi.b$l.dd(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:1)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wi.b$l$a.b(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:79)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wi.b$l$a.get(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:31)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wc2.b.a(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:10)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wc2.b.get(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:7)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wi.b$l.Id(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:29)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wi.b$l.d6(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:36)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wi.b$l.r(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:1)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wi.w.c(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:20)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at wi.w.onCreate(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:1)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at com.adidas.app.HeroApplication.onCreate(r8-map-id-20d99c0f9e3fbf0a825188e8595ddcebbfb49e3d9834f5b5ba4432a951bc7bbb:1)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1390)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7865)
+02-26 09:44:49.350 12027 12027 E AndroidRuntime: 	... 9 more
+02-26 16:50:39.830 30975  6219 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 6219 (create_react_co), pid 30975 (ndroid.shopping)
+02-26 16:50:41.183  6328  6328 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+02-26 16:50:41.183  6328  6328 F DEBUG   : Build fingerprint: 'TECNO/CM6-OPPJ/TECNO-CM6:15/AP3A.240905.015.A2/145022:user/release-keys'
+02-26 16:50:41.183  6328  6328 F DEBUG   : Revision: '0'
+02-26 16:50:41.183  6328  6328 F DEBUG   : ABI: 'arm64'
+02-26 16:50:41.183  6328  6328 F DEBUG   : Timestamp: 2026-02-26 16:50:40.358982531-0500
+02-26 16:50:41.183  6328  6328 F DEBUG   : Process uptime: 835s
+02-26 16:50:41.184  6328  6328 F DEBUG   : Cmdline: com.amazon.mShop.android.shopping
+02-26 16:50:41.184  6328  6328 F DEBUG   : pid: 30975, tid: 6219, name: create_react_co  >>> com.amazon.mShop.android.shopping <<<
+02-26 16:50:41.184  6328  6328 F DEBUG   : uid: 10303
+02-26 16:50:41.184  6328  6328 F DEBUG   : tagged_addr_ctrl: 0000000000000001 (PR_TAGGED_ADDR_ENABLE)
+02-26 16:50:41.184  6328  6328 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000000000000000
+02-26 16:50:41.184  6328  6328 F DEBUG   : Cause: null pointer dereference
+02-26 16:50:41.184  6328  6328 F DEBUG   :     x0  0000000000000000  x1  0000000000000008  x2  0000000000000000  x3  0000000000000010
+02-26 16:50:41.184  6328  6328 F DEBUG   :     x4  0000000000000000  x5  0000000000000000  x6  0000000000000000  x7  505b9183e3314319
+02-26 16:50:41.184  6328  6328 F DEBUG   :     x8  b4000074bc72e630  x9  0000006bce22b8f9  x10 0000000054bfb16d  x11 0000000000008000
+02-26 16:50:41.184  6328  6328 F DEBUG   :     x12 0000006ae9f2ef50  x13 00000072805e15f1  x14 0000006ae9f2daa0  x15 00000000ebad6a89
+02-26 16:50:41.184  6328  6328 F DEBUG   :     x16 0000006bce235b98  x17 0000006bce22ef78  x18 0000006ae7ce8000  x19 b4000074bc72e69c
+02-26 16:50:41.184  6328  6328 F DEBUG   :     x20 0000006ae9f2fa80  x21 b4000074ac9303e0  x22 00000072db1870c0  x23 0000000000000071
+02-26 16:50:41.184  6328  6328 F DEBUG   :     x24 0000007378ff0880  x25 0000006ae9f2f060  x26 0000006ae9f2f06c  x27 0000006ae9f2f060
+02-26 16:50:41.184  6328  6328 F DEBUG   :     x28 0000006ae9f2ef60  x29 0000006ae9f2ee90
+02-26 16:50:41.184  6328  6328 F DEBUG   :     lr  0000006b931d1168  sp  0000006ae9f2ee90  pc  0000006bce22efac  pst 0000000080001000
+02-26 16:50:41.184  6328  6328 F DEBUG   : 22 total frames
+02-26 16:50:41.184  6328  6328 F DEBUG   : backtrace:
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #00 pc 0000000000008fac  /data/app/~~jSpdh3OtGMUY-Rd6tZSUPw==/com.amazon.mShop.android.shopping-MaCQx7MiPPp6v7bGH4ViXw==/split_config.arm64_v8a.apk!libreact_featureflags.so (offset 0x33a8000) (facebook::react::ReactNativeFeatureFlagsAccessor::fuseboxEnabledRelease()+52) (BuildId: 926d85819c11945a)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #01 pc 0000000000040164  /data/app/~~jSpdh3OtGMUY-Rd6tZSUPw==/com.amazon.mShop.android.shopping-MaCQx7MiPPp6v7bGH4ViXw==/split_config.arm64_v8a.apk!libjsinspector.so (offset 0x2d00000) (facebook::react::jsinspector_modern::InspectorFlags::loadFlagsAndAssertUnchanged() const+36) (BuildId: 24e792de0247219a)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #02 pc 0000000000040130  /data/app/~~jSpdh3OtGMUY-Rd6tZSUPw==/com.amazon.mShop.android.shopping-MaCQx7MiPPp6v7bGH4ViXw==/split_config.arm64_v8a.apk!libjsinspector.so (offset 0x2d00000) (facebook::react::jsinspector_modern::InspectorFlags::getFuseboxEnabled() const+8) (BuildId: 24e792de0247219a)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #03 pc 0000000000016708  /data/app/~~jSpdh3OtGMUY-Rd6tZSUPw==/com.amazon.mShop.android.shopping-MaCQx7MiPPp6v7bGH4ViXw==/split_config.arm64_v8a.apk!libreact_devsupportjni.so (offset 0x3388000) (facebook::jni::detail::FunctionWrapperWithJniEntryPoint<bool (*)(facebook::jni::alias_ref<_jclass*>), &facebook::react::jsinspector_modern::JInspectorFlags::getFuseboxEnabled(facebook::jni::alias_ref<_jclass*>), _jclass*, bool>::call(_JNIEnv*, _jobject*)+44) (BuildId: ca4513d44336d30a)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #04 pc 00000000002e5100  /apex/com.android.art/lib64/libart.so (art_quick_generic_jni_trampoline+144) (BuildId: be34fbe63ff357beb403f9cb39923ea7)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #05 pc 00000000006687e8  /apex/com.android.art/lib64/libart.so (nterp_helper+152) (BuildId: be34fbe63ff357beb403f9cb39923ea7)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #06 pc 00000000002320c0  /data/app/~~jSpdh3OtGMUY-Rd6tZSUPw==/com.amazon.mShop.android.shopping-MaCQx7MiPPp6v7bGH4ViXw==/base.apk (com.facebook.react.ReactInstanceManager.getOrCreateInspectorTarget+8)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #07 pc 00000000006696a4  /apex/com.android.art/lib64/libart.so (nterp_helper+3924) (BuildId: be34fbe63ff357beb403f9cb39923ea7)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #08 pc 0000000000231f00  /data/app/~~jSpdh3OtGMUY-Rd6tZSUPw==/com.amazon.mShop.android.shopping-MaCQx7MiPPp6v7bGH4ViXw==/base.apk (com.facebook.react.ReactInstanceManager.createReactContext+136)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #09 pc 00000000006696a4  /apex/com.android.art/lib64/libart.so (nterp_helper+3924) (BuildId: be34fbe63ff357beb403f9cb39923ea7)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #10 pc 0000000000232ea8  /data/app/~~jSpdh3OtGMUY-Rd6tZSUPw==/com.amazon.mShop.android.shopping-MaCQx7MiPPp6v7bGH4ViXw==/base.apk (com.facebook.react.ReactInstanceManager.lambda$runCreateReactContextOnNewThread$2+100)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #11 pc 00000000006696a4  /apex/com.android.art/lib64/libart.so (nterp_helper+3924) (BuildId: be34fbe63ff357beb403f9cb39923ea7)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #12 pc 0000000000232534  /data/app/~~jSpdh3OtGMUY-Rd6tZSUPw==/com.amazon.mShop.android.shopping-MaCQx7MiPPp6v7bGH4ViXw==/base.apk (com.facebook.react.ReactInstanceManager.$r8$lambda$PrBhihCbbAFk4ZReAALGanVLCyc+0)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #13 pc 0000000000668784  /apex/com.android.art/lib64/libart.so (nterp_helper+52) (BuildId: be34fbe63ff357beb403f9cb39923ea7)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #14 pc 000000000023110c  /data/app/~~jSpdh3OtGMUY-Rd6tZSUPw==/com.amazon.mShop.android.shopping-MaCQx7MiPPp6v7bGH4ViXw==/base.apk (com.facebook.react.ReactInstanceManager$$ExternalSyntheticLambda1.run+8)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #15 pc 000000000037d5f0  /data/misc/apexdata/com.android.art/dalvik-cache/arm64/boot.oat (java.lang.Thread.run+64)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #16 pc 00000000002cdd94  /apex/com.android.art/lib64/libart.so (art_quick_invoke_stub+612) (BuildId: be34fbe63ff357beb403f9cb39923ea7)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #17 pc 000000000026e624  /apex/com.android.art/lib64/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+220) (BuildId: be34fbe63ff357beb403f9cb39923ea7)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #18 pc 00000000004c3f30  /apex/com.android.art/lib64/libart.so (art::Thread::CreateCallback(void*)+1184) (BuildId: be34fbe63ff357beb403f9cb39923ea7)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #19 pc 00000000004c3a80  /apex/com.android.art/lib64/libart.so (art::Thread::CreateCallbackWithUffdGc(void*)+8) (BuildId: be34fbe63ff357beb403f9cb39923ea7)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #20 pc 0000000000070098  /apex/com.android.runtime/lib64/bionic/libc.so (__pthread_start(void*)+200) (BuildId: 41b260160dbd4aae2b04f90d937b7e4f)
+02-26 16:50:41.184  6328  6328 F DEBUG   :       #21 pc 0000000000061410  /apex/com.android.runtime/lib64/bionic/libc.so (__start_thread+64) (BuildId: 41b260160dbd4aae2b04f90d937b7e4f)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: FATAL EXCEPTION: main
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: Process: com.grupor5.r5app:com.emrys.rjsniffer.rjsniffer.Sniffer, PID: 15395
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: java.lang.RuntimeException: Unable to create application com.grupor5.r5app.MyApp: java.lang.IllegalStateException: SharedPreferences cannot be accessed if UserManager is not available. (e.g. from inside an isolated process)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7871)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2566)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at com.android.internal.os.ChildZygoteInit.runZygoteServer(ChildZygoteInit.java:136)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at com.android.internal.os.AppZygoteInit.main(AppZygoteInit.java:119)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: Caused by: java.lang.IllegalStateException: SharedPreferences cannot be accessed if UserManager is not available. (e.g. from inside an isolated process)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at android.app.ContextImpl.getSharedPreferences(ContextImpl.java:647)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at android.app.ContextImpl.getSharedPreferences(ContextImpl.java:610)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at android.content.ContextWrapper.getSharedPreferences(ContextWrapper.java:223)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at org.chromium.support_lib_boundary.util.a.p(SourceFile:35)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at com.facebook.s.m(SourceFile:38)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at com.facebook.s.l(SourceFile:9)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at com.grupor5.r5app.MyApp.onCreate(SourceFile:88)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1390)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7865)
+02-28 13:10:11.697 15395 15395 E AndroidRuntime: 	... 13 more
+03-01 22:42:35.872   721   721 F libc    : crash_dump helper failed to exec, or was killed
+03-01 22:42:40.694   636   636 F libc    : crash_dump helper failed to exec, or was killed
+03-02 22:27:24.123   721   721 F libc    : crash_dump helper failed to exec, or was killed
+03-02 22:31:18.325   721   721 F libc    : crash_dump helper failed to exec, or was killed
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: FATAL EXCEPTION: main
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: Process: com.anonymous.Slow, PID: 28934
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: java.lang.NullPointerException: java.lang.NullPointerException
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: 	at com.facebook.react.devsupport.CxxInspectorPackagerConnection$WebSocketDelegate.didReceiveMessage(Native Method)
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: 	at com.facebook.react.devsupport.CxxInspectorPackagerConnection$DelegateImpl$connectWebSocket$webSocket$1.onMessage$lambda$1(CxxInspectorPackagerConnection.kt:111)
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: 	at com.facebook.react.devsupport.CxxInspectorPackagerConnection$DelegateImpl$connectWebSocket$webSocket$1.$r8$lambda$O31gJ9mPudNC5xHMm3nPJgxbPDI(Unknown Source:0)
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: 	at com.facebook.react.devsupport.CxxInspectorPackagerConnection$DelegateImpl$connectWebSocket$webSocket$1$$ExternalSyntheticLambda3.run(D8$$SyntheticClass:0)
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:959)
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-02 22:49:19.247 28934 28934 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: FATAL EXCEPTION: main
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: Process: com.anonymous.Slow, PID: 5363
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: java.lang.RuntimeException: Unable to start service com.anonymous.Slow.AIPassiveAlertService@a653d46 with Intent { cmp=com.anonymous.Slow/.AIPassiveAlertService (has extras) }: java.lang.SecurityException: Neither user 10427 nor current process has android.permission.WAKE_LOCK.
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.app.ActivityThread.handleServiceArgs(ActivityThread.java:5438)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleServiceArgs(Unknown Source:0)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2619)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: Caused by: java.lang.SecurityException: Neither user 10427 nor current process has android.permission.WAKE_LOCK.
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.os.IPowerManager$Stub$Proxy.acquireWakeLock(IPowerManager.java:1363)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.os.PowerManager$WakeLock.acquireLocked(PowerManager.java:3820)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.os.PowerManager$WakeLock.acquire(PowerManager.java:3785)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at com.facebook.react.HeadlessJsTaskService$Companion.acquireWakeLockNow(HeadlessJsTaskService.kt:181)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at com.facebook.react.HeadlessJsTaskService.startTask(HeadlessJsTaskService.kt:69)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at com.facebook.react.HeadlessJsTaskService.onStartCommand(HeadlessJsTaskService.kt:44)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.app.ActivityThread.handleServiceArgs(ActivityThread.java:5420)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	... 9 more
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.app.ContextImpl.enforce(ContextImpl.java:2620)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.app.ContextImpl.enforceCallingOrSelfPermission(ContextImpl.java:2648)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at com.android.server.power.PowerManagerService$BinderService.acquireWakeLock(PowerManagerService.java:6466)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.os.IPowerManager$Stub.onTransact(IPowerManager.java:640)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 	at android.os.Binder.execTransactInternal(Binder.java:1529)
+03-02 23:20:46.264  5363  5363 E AndroidRuntime: 
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: Process: com.anonymous.Slow, PID: 25563
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: java.lang.RuntimeException: Unable to start service com.anonymous.Slow.AIPassiveAlertService@13e1521 with Intent { cmp=com.anonymous.Slow/.AIPassiveAlertService (has extras) }: java.lang.SecurityException: Neither user 10427 nor current process has android.permission.WAKE_LOCK.
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.app.ActivityThread.handleServiceArgs(ActivityThread.java:5438)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleServiceArgs(Unknown Source:0)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2619)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: Caused by: java.lang.SecurityException: Neither user 10427 nor current process has android.permission.WAKE_LOCK.
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.os.IPowerManager$Stub$Proxy.acquireWakeLock(IPowerManager.java:1363)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.os.PowerManager$WakeLock.acquireLocked(PowerManager.java:3820)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.os.PowerManager$WakeLock.acquire(PowerManager.java:3785)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at com.facebook.react.HeadlessJsTaskService$Companion.acquireWakeLockNow(HeadlessJsTaskService.kt:181)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at com.facebook.react.HeadlessJsTaskService.startTask(HeadlessJsTaskService.kt:69)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at com.facebook.react.HeadlessJsTaskService.onStartCommand(HeadlessJsTaskService.kt:44)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.app.ActivityThread.handleServiceArgs(ActivityThread.java:5420)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	... 9 more
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.app.ContextImpl.enforce(ContextImpl.java:2620)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.app.ContextImpl.enforceCallingOrSelfPermission(ContextImpl.java:2648)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at com.android.server.power.PowerManagerService$BinderService.acquireWakeLock(PowerManagerService.java:6466)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.os.IPowerManager$Stub.onTransact(IPowerManager.java:640)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 	at android.os.Binder.execTransactInternal(Binder.java:1529)
+03-03 00:15:55.508 25563 25563 E AndroidRuntime: 
+03-03 22:01:51.129   721   721 F libc    : crash_dump helper failed to exec, or was killed
+03-03 22:01:54.550   636   636 F libc    : crash_dump helper failed to exec, or was killed
+03-03 22:14:50.787   721   721 F libc    : crash_dump helper failed to exec, or was killed
+03-03 22:15:03.686   636   636 F libc    : crash_dump helper failed to exec, or was killed
+03-03 22:21:15.192   636   636 F libc    : crash_dump helper failed to exec, or was killed
+03-03 22:21:16.530   721   721 F libc    : crash_dump helper failed to exec, or was killed
+03-03 22:21:20.272   636   636 F libc    : crash_dump helper failed to exec, or was killed
+03-03 23:45:21.728   798   798 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 23:45:21.728   798   798 E AndroidRuntime: Process: com.anonymous.Slow, PID: 798
+03-03 23:45:21.728   798   798 E AndroidRuntime: java.lang.RuntimeException: Unable to create service expo.modules.slowusagestats.UsageMonitorService: java.lang.SecurityException: Permission Denial: startForeground from pid=798, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5263)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2594)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 23:45:21.728   798   798 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission Denial: startForeground from pid=798, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:7691)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:776)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at expo.modules.slowusagestats.UsageMonitorService.onCreate(UsageMonitorService.kt:39)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5250)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	... 9 more
+03-03 23:45:21.728   798   798 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.enforcePermission(ActivityManagerService.java:6996)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundInnerLocked(ActiveServices.java:2311)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundLocked(ActiveServices.java:1963)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.setServiceForeground(ActivityManagerService.java:15781)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact$setServiceForeground$(IActivityManager.java:13603)
+03-03 23:45:21.728   798   798 E AndroidRuntime: 
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: Process: com.anonymous.Slow, PID: 1879
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: java.lang.RuntimeException: Unable to create service expo.modules.slowusagestats.UsageMonitorService: java.lang.SecurityException: Permission Denial: startForeground from pid=1879, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5263)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2594)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission Denial: startForeground from pid=1879, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:7691)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:776)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at expo.modules.slowusagestats.UsageMonitorService.onCreate(UsageMonitorService.kt:39)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5250)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	... 9 more
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.enforcePermission(ActivityManagerService.java:6996)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundInnerLocked(ActiveServices.java:2311)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundLocked(ActiveServices.java:1963)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.setServiceForeground(ActivityManagerService.java:15781)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact$setServiceForeground$(IActivityManager.java:13603)
+03-03 23:46:21.642  1879  1879 E AndroidRuntime: 
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: Process: com.anonymous.Slow, PID: 3101
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: java.lang.RuntimeException: Unable to create service expo.modules.slowusagestats.UsageMonitorService: java.lang.SecurityException: Permission Denial: startForeground from pid=3101, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5263)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2594)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission Denial: startForeground from pid=3101, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:7691)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:776)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at expo.modules.slowusagestats.UsageMonitorService.onCreate(UsageMonitorService.kt:39)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5250)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	... 9 more
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.enforcePermission(ActivityManagerService.java:6996)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundInnerLocked(ActiveServices.java:2311)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundLocked(ActiveServices.java:1963)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.setServiceForeground(ActivityManagerService.java:15781)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact$setServiceForeground$(IActivityManager.java:13603)
+03-03 23:46:22.882  3101  3101 E AndroidRuntime: 
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: Process: com.anonymous.Slow, PID: 3876
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: java.lang.RuntimeException: Unable to create service expo.modules.slowusagestats.UsageMonitorService: java.lang.SecurityException: Permission Denial: startForeground from pid=3876, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5263)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2594)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission Denial: startForeground from pid=3876, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:7691)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:776)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at expo.modules.slowusagestats.UsageMonitorService.onCreate(UsageMonitorService.kt:39)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5250)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	... 9 more
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.enforcePermission(ActivityManagerService.java:6996)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundInnerLocked(ActiveServices.java:2311)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundLocked(ActiveServices.java:1963)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.setServiceForeground(ActivityManagerService.java:15781)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact$setServiceForeground$(IActivityManager.java:13603)
+03-03 23:46:38.349  3876  3876 E AndroidRuntime: 
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: Process: com.anonymous.Slow, PID: 4299
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: java.lang.RuntimeException: Unable to create service expo.modules.slowusagestats.UsageMonitorService: java.lang.SecurityException: Permission Denial: startForeground from pid=4299, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5263)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2594)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission Denial: startForeground from pid=4299, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:7691)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:776)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at expo.modules.slowusagestats.UsageMonitorService.onCreate(UsageMonitorService.kt:39)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5250)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	... 9 more
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.enforcePermission(ActivityManagerService.java:6996)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundInnerLocked(ActiveServices.java:2311)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundLocked(ActiveServices.java:1963)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.setServiceForeground(ActivityManagerService.java:15781)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact$setServiceForeground$(IActivityManager.java:13603)
+03-03 23:46:48.578  4299  4299 E AndroidRuntime: 
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: Process: com.anonymous.Slow, PID: 4396
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: java.lang.RuntimeException: Unable to create service expo.modules.slowusagestats.UsageMonitorService: java.lang.SecurityException: Permission Denial: startForeground from pid=4396, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5263)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2594)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission Denial: startForeground from pid=4396, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:7691)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:776)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at expo.modules.slowusagestats.UsageMonitorService.onCreate(UsageMonitorService.kt:39)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5250)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	... 9 more
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.enforcePermission(ActivityManagerService.java:6996)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundInnerLocked(ActiveServices.java:2311)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundLocked(ActiveServices.java:1963)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.setServiceForeground(ActivityManagerService.java:15781)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact$setServiceForeground$(IActivityManager.java:13603)
+03-03 23:46:49.819  4396  4396 E AndroidRuntime: 
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: Process: com.anonymous.Slow, PID: 4596
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: java.lang.RuntimeException: Unable to create service expo.modules.slowusagestats.UsageMonitorService: java.lang.SecurityException: Permission Denial: startForeground from pid=4596, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5263)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2594)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission Denial: startForeground from pid=4596, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:7691)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:776)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at expo.modules.slowusagestats.UsageMonitorService.onCreate(UsageMonitorService.kt:39)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5250)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	... 9 more
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.enforcePermission(ActivityManagerService.java:6996)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundInnerLocked(ActiveServices.java:2311)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundLocked(ActiveServices.java:1963)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.setServiceForeground(ActivityManagerService.java:15781)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact$setServiceForeground$(IActivityManager.java:13603)
+03-03 23:49:18.915  4596  4596 E AndroidRuntime: 
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: Process: com.anonymous.Slow, PID: 4804
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: java.lang.RuntimeException: Unable to create service expo.modules.slowusagestats.UsageMonitorService: java.lang.SecurityException: Permission Denial: startForeground from pid=4804, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5263)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2594)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission Denial: startForeground from pid=4804, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:7691)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:776)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at expo.modules.slowusagestats.UsageMonitorService.onCreate(UsageMonitorService.kt:39)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5250)
+03-03 23:49:53.683  4804  4804 E AndroidRuntime: 	... 9 more
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: Process: com.anonymous.Slow, PID: 4896
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: java.lang.RuntimeException: Unable to create service expo.modules.slowusagestats.UsageMonitorService: java.lang.SecurityException: Permission Denial: startForeground from pid=4896, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5263)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2594)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission Denial: startForeground from pid=4896, uid=10433 requires android.permission.FOREGROUND_SERVICE
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:7691)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:776)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at expo.modules.slowusagestats.UsageMonitorService.onCreate(UsageMonitorService.kt:39)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5250)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	... 9 more
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.enforcePermission(ActivityManagerService.java:6996)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundInnerLocked(ActiveServices.java:2311)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundLocked(ActiveServices.java:1963)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.setServiceForeground(ActivityManagerService.java:15781)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact$setServiceForeground$(IActivityManager.java:13603)
+03-03 23:49:55.151  4896  4896 E AndroidRuntime: 
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: Process: com.anonymous.Slow, PID: 5792
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: java.lang.RuntimeException: Unable to create service expo.modules.slowusagestats.UsageMonitorService: java.lang.SecurityException: Permission Denial: startForeground from pid=5792, uid=10434 requires android.permission.FOREGROUND_SERVICE
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5263)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2594)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission Denial: startForeground from pid=5792, uid=10434 requires android.permission.FOREGROUND_SERVICE
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:7691)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:776)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at expo.modules.slowusagestats.UsageMonitorService.onCreate(UsageMonitorService.kt:39)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5250)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	... 9 more
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.enforcePermission(ActivityManagerService.java:6996)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundInnerLocked(ActiveServices.java:2311)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundLocked(ActiveServices.java:1963)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.setServiceForeground(ActivityManagerService.java:15781)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact$setServiceForeground$(IActivityManager.java:13603)
+03-03 23:50:41.241  5792  5792 E AndroidRuntime: 
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: Process: com.anonymous.Slow, PID: 5895
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: java.lang.RuntimeException: Unable to create service expo.modules.slowusagestats.UsageMonitorService: java.lang.SecurityException: Permission Denial: startForeground from pid=5895, uid=10434 requires android.permission.FOREGROUND_SERVICE
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5263)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2594)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission Denial: startForeground from pid=5895, uid=10434 requires android.permission.FOREGROUND_SERVICE
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:7691)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:776)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at expo.modules.slowusagestats.UsageMonitorService.onCreate(UsageMonitorService.kt:39)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5250)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	... 9 more
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.enforcePermission(ActivityManagerService.java:6996)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundInnerLocked(ActiveServices.java:2311)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundLocked(ActiveServices.java:1963)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.setServiceForeground(ActivityManagerService.java:15781)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact$setServiceForeground$(IActivityManager.java:13603)
+03-03 23:52:04.829  5895  5895 E AndroidRuntime: 
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: Process: com.anonymous.Slow, PID: 5969
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: java.lang.RuntimeException: Unable to create service expo.modules.slowusagestats.UsageMonitorService: java.lang.SecurityException: Permission Denial: startForeground from pid=5969, uid=10434 requires android.permission.FOREGROUND_SERVICE
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5263)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2594)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission Denial: startForeground from pid=5969, uid=10434 requires android.permission.FOREGROUND_SERVICE
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:7691)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:776)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at expo.modules.slowusagestats.UsageMonitorService.onCreate(UsageMonitorService.kt:39)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5250)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	... 9 more
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.enforcePermission(ActivityManagerService.java:6996)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundInnerLocked(ActiveServices.java:2311)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundLocked(ActiveServices.java:1963)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.setServiceForeground(ActivityManagerService.java:15781)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact$setServiceForeground$(IActivityManager.java:13603)
+03-03 23:52:06.169  5969  5969 E AndroidRuntime: 
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: FATAL EXCEPTION: main
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: Process: com.anonymous.Slow, PID: 6717
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: java.lang.RuntimeException: Unable to create service expo.modules.slowusagestats.UsageMonitorService: java.lang.SecurityException: Permission Denial: startForeground from pid=6717, uid=10434 requires android.permission.FOREGROUND_SERVICE
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5263)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2594)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:311)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:408)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9119)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:627)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: Caused by: java.lang.SecurityException: Permission Denial: startForeground from pid=6717, uid=10434 requires android.permission.FOREGROUND_SERVICE
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3251)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3235)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3218)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3160)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.setServiceForeground(IActivityManager.java:7691)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.app.Service.startForeground(Service.java:776)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at expo.modules.slowusagestats.UsageMonitorService.onCreate(UsageMonitorService.kt:39)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:5250)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	... 9 more
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.enforcePermission(ActivityManagerService.java:6996)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundInnerLocked(ActiveServices.java:2311)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at com.android.server.am.ActiveServices.setServiceForegroundLocked(ActiveServices.java:1963)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at com.android.server.am.ActivityManagerService.setServiceForeground(ActivityManagerService.java:15781)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 	at android.app.IActivityManager$Stub.onTransact$setServiceForeground$(IActivityManager.java:13603)
+03-03 23:52:22.120  6717  6717 E AndroidRuntime: 

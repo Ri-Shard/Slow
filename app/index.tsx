@@ -3,8 +3,26 @@ import { useRouter } from 'expo-router';
 import { PlayCircle, Settings } from 'lucide-react-native';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
+import { getSkippedUnlocksCountToday } from '@/services/database/schema';
+import { useFocusEffect } from 'expo-router';
+import React, { useCallback, useState } from 'react';
+
 export default function HomeScreen() {
     const router = useRouter();
+    const [savedMinutes, setSavedMinutes] = useState(0);
+    const [skippedCount, setSkippedCount] = useState(0);
+
+    const loadData = async () => {
+        const count = await getSkippedUnlocksCountToday();
+        setSkippedCount(count);
+        setSavedMinutes(count * 15);
+    };
+
+    useFocusEffect(
+        useCallback(() => {
+            loadData();
+        }, [])
+    );
 
     return (
         <View style={styles.container}>
@@ -22,9 +40,9 @@ export default function HomeScreen() {
                 activeOpacity={0.8}
                 onPress={() => router.push('/stats')}
             >
-                <Text style={styles.statsTitle}>Racha Actual</Text>
-                <Text style={styles.statsValue}>0 Días</Text>
-                <Text style={styles.statsLabel}>Tiempo rescatado hoy: 0 min. Toca para ver detalle.</Text>
+                <Text style={styles.statsTitle}>Tiempo Ahorrado Hoy</Text>
+                <Text style={styles.statsValue}>{savedMinutes} Min</Text>
+                <Text style={styles.statsLabel}>Has evitado {skippedCount} distracciones hoy. Toca para ver detalle.</Text>
             </TouchableOpacity>
 
             <View style={styles.actionContainer}>

@@ -1,12 +1,10 @@
-import { NativeModules } from 'react-native';
-
-const { UsageStatsModule } = NativeModules;
+import SlowUsageStats from '../modules/slow-usage-stats';
 
 export const UsageStatsService = {
     checkPermission: async (): Promise<boolean> => {
         try {
-            if (!UsageStatsModule) return false;
-            return await UsageStatsModule.checkPermission();
+            if (!SlowUsageStats) return false;
+            return await SlowUsageStats.checkPermission();
         } catch (e) {
             console.error('UsageStats check error', e);
             return false;
@@ -14,27 +12,45 @@ export const UsageStatsService = {
     },
 
     requestPermission: (): void => {
-        if (UsageStatsModule) {
-            UsageStatsModule.requestPermission();
+        if (SlowUsageStats) {
+            SlowUsageStats.requestPermission();
         } else {
-            console.warn('UsageStatsModule is not available. Are you running in Expo Go?');
+            console.warn('SlowUsageStats is not available. Are you running in Expo Go?');
+        }
+    },
+
+    canDrawOverlays: async (): Promise<boolean> => {
+        try {
+            if (!SlowUsageStats) return false;
+            return await SlowUsageStats.canDrawOverlays();
+        } catch (e) {
+            console.error('Draw Overlays check error', e);
+            return false;
+        }
+    },
+
+    requestOverlayPermission: (): void => {
+        if (SlowUsageStats) {
+            SlowUsageStats.requestOverlayPermission();
+        } else {
+            console.warn('SlowUsageStats is not available. Are you running in Expo Go?');
         }
     },
 
     getLastUsedApp: async (): Promise<string | null> => {
         try {
-            if (!UsageStatsModule) return null;
-            return await UsageStatsModule.getLastUsedApp();
+            if (!SlowUsageStats) return null;
+            return await SlowUsageStats.getLastUsedApp();
         } catch (e) {
             console.error('Error getting last used app', e);
             return null;
         }
     },
 
-    sendPassiveNotification: (title: string, message: String): void => {
+    sendPassiveNotification: (title: string, message: string): void => {
         try {
-            if (UsageStatsModule && UsageStatsModule.sendPassiveNotification) {
-                UsageStatsModule.sendPassiveNotification(title, message);
+            if (SlowUsageStats && SlowUsageStats.sendPassiveNotification) {
+                SlowUsageStats.sendPassiveNotification(title, message);
             }
         } catch (e) {
             console.error('Error sending passive notification', e);
@@ -43,8 +59,8 @@ export const UsageStatsService = {
 
     startMonitorService: (): void => {
         try {
-            if (UsageStatsModule && UsageStatsModule.startMonitorService) {
-                UsageStatsModule.startMonitorService();
+            if (SlowUsageStats && SlowUsageStats.startMonitorService) {
+                SlowUsageStats.startMonitorService();
                 console.log('Native Foreground Usage Monitor started.');
             }
         } catch (e) {
@@ -54,8 +70,8 @@ export const UsageStatsService = {
 
     stopMonitorService: (): void => {
         try {
-            if (UsageStatsModule && UsageStatsModule.stopMonitorService) {
-                UsageStatsModule.stopMonitorService();
+            if (SlowUsageStats && SlowUsageStats.stopMonitorService) {
+                SlowUsageStats.stopMonitorService();
                 console.log('Native Foreground Usage Monitor stopped.');
             }
         } catch (e) {

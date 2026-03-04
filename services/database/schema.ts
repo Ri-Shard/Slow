@@ -65,3 +65,20 @@ export const getTodayUnlockCount = async (): Promise<number> => {
         return 0;
     }
 };
+
+export const getSkippedUnlocksCountToday = async (): Promise<number> => {
+    try {
+        const database = await getDb();
+        const startOfDay = new Date();
+        startOfDay.setHours(0, 0, 0, 0);
+
+        const result = await database.getFirstAsync<{ count: number }>(
+            `SELECT COUNT(*) as count FROM unlocks WHERE timestamp >= datetime(?, 'unixepoch') AND skipped = 1`,
+            [Math.floor(startOfDay.getTime() / 1000)]
+        );
+        return result?.count || 0;
+    } catch (error) {
+        console.error('Error fetching today skipped unlocks count:', error);
+        return 0;
+    }
+};

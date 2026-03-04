@@ -7,6 +7,9 @@ const PERMISSIONS_TO_ADD = [
     'android.permission.PACKAGE_USAGE_STATS',
     'android.permission.POST_NOTIFICATIONS',
     'android.permission.RECEIVE_BOOT_COMPLETED',
+    'android.permission.SYSTEM_ALERT_WINDOW',
+    'android.permission.FOREGROUND_SERVICE',
+    'android.permission.FOREGROUND_SERVICE_SPECIAL_USE',
 ];
 
 const withUsageStatsPermission = (config) => {

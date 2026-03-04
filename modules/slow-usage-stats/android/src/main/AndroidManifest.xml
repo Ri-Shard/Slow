@@ -1,0 +1,20 @@
+<manifest package="expo.modules.slowusagestats"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <application>
+    <service
+        android:name=".UsageMonitorService"
+        android:enabled="true"
+        android:exported="false"
+        android:foregroundServiceType="specialUse" />
+
+    <receiver
+      android:name=".UnlockReceiver"
+      android:enabled="true"
+      android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.USER_PRESENT" />
+        <action android:name="android.intent.action.BOOT_COMPLETED" />
+      </intent-filter>
+    </receiver>
+  </application>
+</manifest>

@@ -17,6 +17,7 @@ export default function SettingsScreen() {
 
     const [hasUsagePermission, setHasUsagePermission] = useState(true);
     const [hasNotificationPermission, setHasNotificationPermission] = useState(true);
+    const [hasOverlayPermission, setHasOverlayPermission] = useState(true);
     const [isAIAvailable, setIsAIAvailable] = useState(false);
     const [isDownloading, setIsDownloading] = useState(false);
     const [downloadProgress, setDownloadProgress] = useState(0);
@@ -24,6 +25,9 @@ export default function SettingsScreen() {
     const checkStatus = async () => {
         const usage = await UsageStatsService.checkPermission();
         setHasUsagePermission(usage);
+
+        const overlay = await UsageStatsService.canDrawOverlays();
+        setHasOverlayPermission(overlay);
 
         const ai = await AIService.isModelAvailable();
         setIsAIAvailable(ai);
@@ -69,6 +73,10 @@ export default function SettingsScreen() {
 
     const openUsageSettings = () => {
         UsageStatsService.requestPermission();
+    };
+
+    const openOverlaySettings = () => {
+        UsageStatsService.requestOverlayPermission();
     };
 
     const openAppSettings = () => {
@@ -180,6 +188,30 @@ export default function SettingsScreen() {
                     >
                         <Text style={styles.fixButtonText}>Ajustes</Text>
                     </TouchableOpacity>
+                </View>
+
+                <View style={styles.divider} />
+
+                <View style={styles.settingRow}>
+                    <View style={styles.settingTextContainer}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+                            <Text style={styles.settingTitle}>Apertura Automática</Text>
+                            {hasOverlayPermission ? (
+                                <CheckCircle size={14} color={Colors.success} />
+                            ) : (
+                                <AlertTriangle size={14} color={Colors.warning} />
+                            )}
+                        </View>
+                        <Text style={styles.settingDesc}>Permite que Slow salte directo al desbloquear</Text>
+                    </View>
+                    {!hasOverlayPermission && (
+                        <TouchableOpacity
+                            style={styles.fixButton}
+                            onPress={openOverlaySettings}
+                        >
+                            <Text style={styles.fixButtonText}>Configurar</Text>
+                        </TouchableOpacity>
+                    )}
                 </View>
             </View>
 

@@ -2,14 +2,16 @@ import { Colors } from '@/constants/Colors';
 import { AIService } from '@/services/aiService';
 import { recordUnlock } from '@/services/database/schema';
 import { UsageStatsService } from '@/services/usageStats';
+import { useIsFocused } from '@react-navigation/native';
 import { useRouter } from 'expo-router';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function PauseScreen() {
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const isFocused = useIsFocused();
 
     // UI States
     const [question, setQuestion] = useState('¿Qué necesitas ahora mismo?');
@@ -56,11 +58,13 @@ export default function PauseScreen() {
             response = `Has elegido ${choice}. Tómate un respiro antes de continuar.`;
         }
 
-        setReflection(response);
-        setIsLoadingAI(false);
+        if (isFocused) {
+            setReflection(response);
+            setIsLoadingAI(false);
+        }
     };
 
-    const isInitializingRef = React.useRef(false);
+    const isInitializingRef = useRef(false);
 
     useEffect(() => {
         let isMounted = true;
@@ -98,7 +102,10 @@ export default function PauseScreen() {
                 // Ask AI if we should intervene based on the unlock history and current app
                 const shouldBlock = await AIService.shouldIntervene(adjustedHistory, app, adjustedCount);
 
-                if (!isMounted) return;
+                if (!isMounted || !isFocused) {
+                    console.log('PauseScreen evaluated but is no longer focused. Aborting.');
+                    return;
+                }
 
                 if (!shouldBlock) {
                     console.log('AI determined usage is intentional. Auto-dismissing...');
@@ -111,7 +118,7 @@ export default function PauseScreen() {
                 // Turn off loading so user can select their intention
                 setIsLoadingAI(false);
             } catch (e) {
-                if (isMounted) {
+                if (isMounted && isFocused) {
                     console.error('Error in PauseScreen init:', e);
                     setIsLoadingAI(false);
                 }
@@ -125,7 +132,7 @@ export default function PauseScreen() {
             isMounted = false;
             console.log('PauseScreen unmounted, aborting operations');
         };
-    }, []);
+    }, []); // Removed isFocused from dependencies to prevent re-evaluation every time focus changes, we just abort stale references
 
     const handleOptionSelect = async (option: string) => {
         console.log(`User selected: ${option}`);

@@ -39,5 +39,11 @@ yarn-error.*
 app-example
 
 # generated native folders
-# /ios
-# /android
+/ios
+/android
+
+# Expo local module builds
+/modules/**/android/build/
+/modules/**/android/.gradle/
+/modules/**/ios/build/
+/modules/**/ios/Pods/
