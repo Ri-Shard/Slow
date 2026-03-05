@@ -75,7 +75,7 @@ export default function HomeScreen() {
                 <Text style={styles.actionPrompt}>¿Quieres probar una pausa?</Text>
                 <TouchableOpacity
                     style={styles.simulateButton}
-                    onPress={() => router.push('/pause')}
+                    onPress={() => router.push({ pathname: '/pause', params: { simulated: 'true' } })}
                     activeOpacity={0.8}
                 >
                     <PlayCircle color="white" size={20} />

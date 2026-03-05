@@ -3,13 +3,15 @@ import { AIService } from '@/services/aiService';
 import { recordUnlock } from '@/services/database/schema';
 import { UsageStatsService } from '@/services/usageStats';
 import { useIsFocused } from '@react-navigation/native';
-import { useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function PauseScreen() {
     const router = useRouter();
+    const { simulated } = useLocalSearchParams();
+    const isSimulation = simulated === 'true';
     const insets = useSafeAreaInsets();
     const isFocused = useIsFocused();
 
@@ -42,20 +44,31 @@ export default function PauseScreen() {
 
     const handleGenerateReflection = async (appContext: string | null, history: any[], count: number, choice: string) => {
         setIsLoadingAI(true);
-        // Pequeño retraso artificial para que la transición en la interfaz no sea tan brusca.
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        // Pequeño retraso artificial
+        await new Promise(resolve => setTimeout(resolve, 800));
 
         let response = '';
-        try {
-            const { getTopApps } = require('@/services/database/schema');
-            const apps = await getTopApps(3);
-            const topAppsString = apps.map((a: any) => getAppReadableName(a.app_opened)).join(', ') || 'ninguna en especial';
+        const appName = getAppReadableName(appContext);
 
-            response = await AIService.generateReflection(appContext, choice, topAppsString);
-        } catch (error) {
-            console.error('Error generating reflection:', error);
-            response = `Has elegido ${choice}. Tómate un respiro antes de continuar.`;
+        switch (choice) {
+            case 'Conexión':
+                response = `Conectar es humano. Usa ${appName} para nutrir tus relaciones, no solo para desplazar.`;
+                break;
+            case 'Distracción':
+                response = `Es válido distraerse. Disfruta tu tiempo en ${appName} conscientemente y luego regresa.`;
+                break;
+            case 'Información':
+                response = `Aprender es genial. Encuentra lo que buscas en ${appName} y cierra al terminar.`;
+                break;
+            case 'Calma':
+                response = `Busca tu paz. Que ${appName} sea un refugio, no una fuente de ansiedad.`;
+                break;
+            default:
+                response = `Has elegido ${choice}. Tómate un respiro antes de continuar en ${appName}.`;
         }
+
+        // Store the decision in the background so the AI can learn from it later if needed
+        // AIService.logIntention(appContext, choice) ... (to be implemented if needed)
 
         if (isFocused) {
             setReflection(response);
@@ -99,7 +112,13 @@ export default function PauseScreen() {
                 const adjustedCount = count + 1;
 
                 // Ask AI if we should intervene based on the unlock history and current app
-                const shouldBlock = await AIService.shouldIntervene(adjustedHistory, app, adjustedCount);
+                let shouldBlock = false;
+                if (isSimulation) {
+                    console.log('Simulation mode detected. Forcing intervention.');
+                    shouldBlock = true;
+                } else {
+                    shouldBlock = await AIService.shouldIntervene(adjustedHistory, app, adjustedCount);
+                }
 
                 if (!isMounted || !isFocused) {
                     console.log('PauseScreen evaluated but is no longer focused. Aborting.');

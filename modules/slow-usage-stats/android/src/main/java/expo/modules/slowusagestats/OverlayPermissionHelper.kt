@@ -30,12 +30,16 @@ object OverlayPermissionHelper {
     }
 
     private fun getAppLaunchIntent(context: Context, deepLink: String = "slow://"): Intent {
-        val pm = context.packageManager
-        val launchIntent = pm.getLaunchIntentForPackage(context.packageName) ?: Intent()
-        launchIntent.action = Intent.ACTION_VIEW
-        launchIntent.data = Uri.parse(deepLink)
-        launchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-        return launchIntent
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(deepLink)
+        intent.setPackage(context.packageName)
+        intent.addFlags(
+            Intent.FLAG_ACTIVITY_NEW_TASK or 
+            Intent.FLAG_ACTIVITY_REORDER_TO_FRONT or
+            Intent.FLAG_ACTIVITY_CLEAR_TOP or 
+            Intent.FLAG_ACTIVITY_SINGLE_TOP
+        )
+        return intent
     }
 
     fun launchFrictionlessApp(context: Context, deepLink: String = "slow://pause") {

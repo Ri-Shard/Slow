@@ -89,18 +89,18 @@ export class AIService {
 
         console.log(`Evaluating Hard Rules: ${unlocksInLast5Mins} unlocks in 5m, ${unlocksInLast15Mins} in 15m. Today: ${todayCount}`);
 
-        if (unlocksInLast5Mins >= 3) {
-            console.log('HARD RULE TRIGGERED: High frequency (≥3 in 5 mins). Forcing intervention.');
+        if (unlocksInLast5Mins >= 2) {
+            console.log('HARD RULE TRIGGERED: High frequency (≥2 in 5 mins). Forcing intervention.');
             return true;
         }
 
-        if (unlocksInLast15Mins >= 5) {
-            console.log('HARD RULE TRIGGERED: Sustained frequency (≥5 in 15 mins). Forcing intervention.');
+        if (unlocksInLast15Mins >= 4) {
+            console.log('HARD RULE TRIGGERED: Sustained frequency (≥4 in 15 mins). Forcing intervention.');
             return true;
         }
 
-        if (todayCount > 40) {
-            console.log('HARD RULE TRIGGERED: Daily limit exceeded (>40 unlocks). Forcing intervention.');
+        if (todayCount > 25) {
+            console.log('HARD RULE TRIGGERED: Daily limit exceeded (>25 unlocks). Forcing intervention.');
             return true;
         }
 

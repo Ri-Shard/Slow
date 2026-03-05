@@ -19,5 +19,11 @@ class UnlockReceiver : BroadcastReceiver() {
 
         NotificationHelper.createChannels(context)
         OverlayPermissionHelper.launchFrictionlessApp(context, "slow://pause")
+        
+        // As a fallback/diagnostic, dispatch the pause notification directly
+        // if for some reason the activity refuses to launch.
+        if (!OverlayPermissionHelper.hasOverlayPermission(context)) {
+             NotificationHelper.dispatchPauseNotification(context)
+        }
     }
 }

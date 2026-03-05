@@ -14,6 +14,7 @@ class UsageMonitorService : Service() {
     private val checkInterval: Long = 60 * 1000 // Every 1 minute
     private var isRunning = false
     private lateinit var evaluator: UsageMonitorEvaluator
+    private var unlockReceiver: UnlockReceiver? = null
 
     companion object {
         fun start(context: Context) {
@@ -48,6 +49,10 @@ class UsageMonitorService : Service() {
                 NotificationHelper.buildForegroundServiceNotification(this)
             )
         }
+
+        val filter = android.content.IntentFilter(android.content.Intent.ACTION_USER_PRESENT)
+        unlockReceiver = UnlockReceiver()
+        registerReceiver(unlockReceiver, filter)
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -71,6 +76,7 @@ class UsageMonitorService : Service() {
     override fun onDestroy() {
         isRunning = false
         handler.removeCallbacks(monitorRunnable)
+        unlockReceiver?.let { unregisterReceiver(it) }
         super.onDestroy()
     }
 }
