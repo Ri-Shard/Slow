@@ -82,3 +82,26 @@ export const getSkippedUnlocksCountToday = async (): Promise<number> => {
         return 0;
     }
 };
+
+export const getTopApps = async (limit: number = 3): Promise<{ app_opened: string, unlocks: number }[]> => {
+    try {
+        const database = await getDb();
+        const startOfDay = new Date();
+        startOfDay.setHours(0, 0, 0, 0);
+
+        const result = await database.getAllAsync<{ app_opened: string, unlocks: number }>(
+            `SELECT app_opened, COUNT(*) as unlocks 
+             FROM unlocks 
+             WHERE timestamp >= datetime(?, 'unixepoch') AND app_opened IS NOT NULL AND skipped = 0
+             GROUP BY app_opened 
+             ORDER BY unlocks DESC 
+             LIMIT ?`,
+            [Math.floor(startOfDay.getTime() / 1000), limit]
+        );
+        return result || [];
+    } catch (error) {
+        console.error('Error fetching top apps:', error);
+        return [];
+    }
+};
+

@@ -46,15 +46,14 @@ export default function PauseScreen() {
         await new Promise(resolve => setTimeout(resolve, 1500));
 
         let response = '';
-        if (choice === 'Conexión') {
-            response = 'Buscar conexión está bien. Asegúrate de que sea genuina.';
-        } else if (choice === 'Distracción') {
-            response = 'Es válido despejar la mente. Pon un límite de tiempo mental.';
-        } else if (choice === 'Información') {
-            response = 'Ve directo a lo que buscas y luego sal.';
-        } else if (choice === 'Calma') {
-            response = 'Respira hondo antes de seguir. Estás al mando.';
-        } else {
+        try {
+            const { getTopApps } = require('@/services/database/schema');
+            const apps = await getTopApps(3);
+            const topAppsString = apps.map((a: any) => getAppReadableName(a.app_opened)).join(', ') || 'ninguna en especial';
+
+            response = await AIService.generateReflection(appContext, choice, topAppsString);
+        } catch (error) {
+            console.error('Error generating reflection:', error);
             response = `Has elegido ${choice}. Tómate un respiro antes de continuar.`;
         }
 

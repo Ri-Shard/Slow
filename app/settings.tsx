@@ -4,7 +4,7 @@ import { UsageStatsService } from '@/services/usageStats';
 import { useRouter } from 'expo-router';
 import { AlertTriangle, ArrowLeft, Brain, CheckCircle, RefreshCw } from 'lucide-react-native';
 import React, { useEffect, useState } from 'react';
-import { AppState, Linking, Platform, StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native';
+import { AppState, Linking, Platform, ScrollView, StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function SettingsScreen() {
@@ -88,7 +88,11 @@ export default function SettingsScreen() {
     };
 
     return (
-        <View style={[styles.container, { paddingTop: Math.max(insets.top, 20) }]}>
+        <ScrollView
+            style={[styles.container, { paddingTop: Math.max(insets.top, 20) }]}
+            contentContainerStyle={{ paddingBottom: 40 }}
+            showsVerticalScrollIndicator={false}
+        >
             <View style={styles.header}>
                 <TouchableOpacity
                     onPress={() => router.back()}
@@ -252,7 +256,7 @@ export default function SettingsScreen() {
                 </TouchableOpacity>
                 <Text style={styles.resetDesc}>Esta acción borrará tu historial de preferencias y efectividad de intervenciones local.</Text>
             </View>
-        </View>
+        </ScrollView>
     );
 }
 

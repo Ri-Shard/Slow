@@ -108,6 +108,59 @@ export class AIService {
         return false;
     }
 
+    static async generateReflection(app: string | null, intent: string, topApps: string): Promise<string> {
+        return this.runExclusive(async () => {
+            if (!this.instance && !(await this.initialize())) {
+                return `Has elegido ${intent}. Tómate un respiro antes de continuar.`;
+            }
+
+            try {
+                const hour = new Date().getHours();
+                const timeOfDay = hour < 6 ? 'madrugada' : hour < 12 ? 'mañana' : hour < 18 ? 'tarde' : 'noche';
+                const appName = app ? app.split('.').pop() : 'su móvil';
+
+                const result = await this.instance!.complete({
+                    messages: [
+                        {
+                            role: 'user',
+                            content: `Son las ${hour}:00 (${timeOfDay}). El usuario iba a abrir ${appName} y eligió la intención "${intent}". Sus apps más usadas son ${topApps}. Como su compañero compasivo de consciencia digital, dale un consejo breve y empático (máximo 15 palabras) validando su intención y motivándolo a usar su tiempo con propósito. Responde DIRECTAMENTE con el mensaje, sin comillas, introducciones ni explicaciones.`
+                        }
+                    ],
+                    options: {
+                        maxTokens: 30,
+                        temperature: 0.8,
+                        stopSequences: ["\n", "<"]
+                    }
+                });
+
+                if (!result || !result.success || !result.response) {
+                    return `Has elegido ${intent}. Tómate un respiro antes de continuar.`;
+                }
+
+                let aiResponse = result.response.trim();
+
+                if (aiResponse.includes('<think>')) {
+                    const thinkEnd = aiResponse.indexOf('</think>');
+                    if (thinkEnd !== -1) {
+                        aiResponse = aiResponse.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
+                    } else {
+                        aiResponse = aiResponse.split('<think>')[0].trim();
+                    }
+                }
+
+                // Clean up quotes
+                if (aiResponse.startsWith('"') && aiResponse.endsWith('"')) {
+                    aiResponse = aiResponse.slice(1, -1);
+                }
+
+                return aiResponse || `Has elegido ${intent}. Tómate un respiro antes de continuar.`;
+            } catch (error) {
+                console.error('Error in generateReflection:', error);
+                return `Has elegido ${intent}. Tómate un respiro antes de continuar.`;
+            }
+        });
+    }
+
     static async analyzeUsageLimit(app: string, durationMinutes: number): Promise<void> {
         console.log(`Analyzing usage limit for ${app} (${durationMinutes} mins) using AI...`);
         const timeoutPromise = new Promise<void>((resolve) =>
@@ -133,11 +186,14 @@ export class AIService {
             }
 
             try {
+                const hour = new Date().getHours();
+                const timeOfDay = hour < 6 ? 'madrugada' : hour < 12 ? 'mañana' : hour < 18 ? 'tarde' : 'noche';
+
                 const result = await this.instance!.complete({
                     messages: [
                         {
                             role: 'user',
-                            content: `El usuario lleva ${durationMinutes} minutos continuos usando la aplicación ${app}. Como su asistente de bienestar digital, determina si esto es demasiado tiempo y redacta una breve notificación persuasiva para que cierre la app (máximo 15 palabras). Comienza la respuesta directamente con el mensaje de notificación. Si crees que no es mucho tiempo (ej. menos de 10 min), responde exactamente "NO".`
+                            content: `Son las ${hour}:00 (${timeOfDay}). El usuario lleva ${durationMinutes} minutos continuos usando la aplicación ${app}. Como su asistente de bienestar digital estricto, determina si esto es demasiado tiempo (especialmente si es de madrugada o tarde) y redacta una breve notificación persuasiva para que cierre la app (máximo 15 palabras). Comienza la respuesta directamente con el mensaje de notificación. Si crees que es aceptable (ej. poco tiempo en hora normal), responde exactamente "NO".`
                         }
                     ],
                     options: {
