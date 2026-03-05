@@ -1,3 +1,4 @@
+import { getTimeOfDayContext } from '@/utils/formatters';
 import { CactusLM } from 'cactus-react-native';
 import { NitroModules } from 'react-native-nitro-modules';
 import { UnlockRecord } from './database/schema';
@@ -116,7 +117,7 @@ export class AIService {
 
             try {
                 const hour = new Date().getHours();
-                const timeOfDay = hour < 6 ? 'madrugada' : hour < 12 ? 'mañana' : hour < 18 ? 'tarde' : 'noche';
+                const timeOfDay = getTimeOfDayContext(hour);
                 const appName = app ? app.split('.').pop() : 'su móvil';
 
                 const result = await this.instance!.complete({
@@ -187,7 +188,7 @@ export class AIService {
 
             try {
                 const hour = new Date().getHours();
-                const timeOfDay = hour < 6 ? 'madrugada' : hour < 12 ? 'mañana' : hour < 18 ? 'tarde' : 'noche';
+                const timeOfDay = getTimeOfDayContext(hour);
 
                 const result = await this.instance!.complete({
                     messages: [

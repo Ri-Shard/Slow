@@ -21,7 +21,6 @@ export const getDb = async () => {
 export const recordUnlock = async (type: string, skipped: boolean = false, appOpened: string | null = null) => {
     try {
         const database = await getDb();
-        console.log(`Recording unlock: ${appOpened} (${type})`);
         await database.runAsync(
             'INSERT INTO unlocks (intervention_type, skipped, app_opened) VALUES (?, ?, ?)',
             [type, skipped ? 1 : 0, appOpened]

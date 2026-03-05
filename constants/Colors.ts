@@ -7,4 +7,5 @@ export const Colors = {
   accentSecondary: '#D9B382',
   success: '#8AA89A',
   warning: '#E6B89C',
+  dangerBg: '#FFF0ED',
 };

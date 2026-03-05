@@ -2,6 +2,7 @@ import { Colors } from '@/constants/Colors';
 import { AIService } from '@/services/aiService';
 import { recordUnlock } from '@/services/database/schema';
 import { UsageStatsService } from '@/services/usageStats';
+import { getAppReadableName } from '@/utils/formatters';
 import { useIsFocused } from '@react-navigation/native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect, useRef, useState } from 'react';
@@ -31,18 +32,7 @@ export default function PauseScreen() {
         return () => clearInterval(timer);
     }, []);
 
-    const getAppReadableName = (packageName: string | null) => {
-        if (!packageName) return 'el móvil';
-        if (packageName.includes('instagram')) return 'Instagram';
-        if (packageName.includes('whatsapp')) return 'WhatsApp';
-        if (packageName.includes('facebook')) return 'Facebook';
-        if (packageName.includes('tiktok')) return 'TikTok';
-        if (packageName.includes('youtube')) return 'YouTube';
-        if (packageName.includes('chrome')) return 'Chrome';
-        return packageName.split('.').pop() || packageName;
-    };
-
-    const handleGenerateReflection = async (appContext: string | null, history: any[], count: number, choice: string) => {
+    const handleGenerateReflection = async (appContext: string | null, history: import('@/services/database/schema').UnlockRecord[], count: number, choice: string) => {
         setIsLoadingAI(true);
         // Pequeño retraso artificial
         await new Promise(resolve => setTimeout(resolve, 800));

@@ -4,6 +4,7 @@ import { PlayCircle, Settings } from 'lucide-react-native';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import { getSkippedUnlocksCountToday, getTopApps } from '@/services/database/schema';
+import { getAppReadableName } from '@/utils/formatters';
 import { useFocusEffect } from 'expo-router';
 import React, { useCallback, useState } from 'react';
 
@@ -27,16 +28,6 @@ export default function HomeScreen() {
             loadData();
         }, [])
     );
-
-    const getAppReadableName = (packageName: string) => {
-        if (packageName.includes('instagram')) return 'Instagram';
-        if (packageName.includes('whatsapp')) return 'WhatsApp';
-        if (packageName.includes('facebook')) return 'Facebook';
-        if (packageName.includes('tiktok')) return 'TikTok';
-        if (packageName.includes('youtube')) return 'YouTube';
-        if (packageName.includes('chrome')) return 'Chrome';
-        return packageName.split('.').pop() || packageName;
-    };
 
     return (
         <View style={styles.container}>

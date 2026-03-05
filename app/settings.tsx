@@ -4,7 +4,7 @@ import { UsageStatsService } from '@/services/usageStats';
 import { useRouter } from 'expo-router';
 import { AlertTriangle, ArrowLeft, Brain, CheckCircle, RefreshCw } from 'lucide-react-native';
 import React, { useEffect, useState } from 'react';
-import { AppState, Linking, Platform, ScrollView, StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, AppState, Linking, Platform, ScrollView, StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function SettingsScreen() {
@@ -45,14 +45,14 @@ export default function SettingsScreen() {
             if (success) {
                 console.log('Download success, updating status');
                 await checkStatus();
-                alert('La IA ha sido descargada correctamente.');
+                Alert.alert('Descarga completada', 'La IA ha sido descargada correctamente y está lista para asistir tu bienestar.');
             } else {
                 console.warn('Download returned success=false');
-                alert('Error al descargar el modelo. Revisa tu conexión a internet.');
+                Alert.alert('Error de descarga', 'No se ha podido descargar la IA. Comprueba tu conexión a internet o el espacio de almacenamiento.');
             }
         } catch (err) {
             console.error('Error in handleDownload:', err);
-            alert('Error inesperado durante la descarga.');
+            Alert.alert('Error inesperado', 'Ocurrió un error mientras se configuraba la Inteligencia Artificial.');
         } finally {
             setIsDownloading(false);
         }
@@ -335,7 +335,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#FFF0ED', // Reddish subtle background
+        backgroundColor: Colors.dangerBg,
         paddingVertical: 14,
         borderRadius: 12,
         gap: 8,
