@@ -56,10 +56,15 @@ class SlowUsageStatsModule : Module() {
               
               val myPackage = context.packageName
               val lastApp = sortedStats.firstOrNull { 
-                  it.packageName != myPackage && 
-                  !launcherPackages.contains(it.packageName) &&
-                  !it.packageName.contains("permissioncontroller") &&
-                  !it.packageName.contains("systemui")
+                  val pkg = it.packageName
+                  pkg != myPackage && 
+                  !launcherPackages.contains(pkg) &&
+                  !pkg.contains("permissioncontroller") &&
+                  !pkg.contains("systemui") &&
+                  !pkg.contains("launcher") &&
+                  !pkg.contains("miui.home") && // Xiaomi
+                  !pkg.contains("sec.android.app.launcher") && // Samsung
+                  !pkg.contains("transsion.hilauncher") // TECNO / Infinix
               }
               promise.resolve(lastApp?.packageName ?: sortedStats[0].packageName)
           } else {
